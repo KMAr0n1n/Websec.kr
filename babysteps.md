@@ -9,11 +9,11 @@ Description: Nothing fancy
 Khi mới truy cập vào web ta sẽ được một form như sau:<br>
 <img src="./img/level1/lv1_index.png/"></img>
 Khi nhìn vào câu dẫn ta có thể nhận ra ngay đây là một dạng bài vê SQLi rồi nhỉ?
-Để kiểm tra ta có thể nhập thử <code>'</code>, site sẽ thông báo ngay lỗi: <img src="./img/lvel1/lv1_error.png/"></img>. Hoặc có thể đọc source của site ở <a href="https://websec.fr/level01/source.php">Link source</a>.
+Để kiểm tra ta có thể nhập thử <code>'</code>, site sẽ thông báo ngay lỗi: <img src="./img/level1/lv1_error.png/"></img>. Hoặc có thể đọc source của site ở <a href="https://websec.fr/level01/source.php">Link source</a>.
 => DB đang sử dụng là SQLite3
 Bây giờ sẽ cần tìm xem số cột của bảng là bao nhiêu. 
 Mình sẽ nhập số một cách bình thường. Ở đây mình nhập là 1. Site trả về kết quả:
-<img src="./img/lvel1/lv1_test.png/"></img>
+<img src="./img/lvel1/lv1_test.png/"></img><br>
 => mình đã tìm được số cột của bảng là 2 cột.
 Sau đó mình dùng payload <code>1 and 1=0 UNION SELECT sql,2 FROM sqlite_master-- </code> để dò thông tin từ bảng, thu được: 
 <img src="./img/lvel1/lv1_table.png/"></img>
